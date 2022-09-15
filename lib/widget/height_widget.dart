@@ -22,8 +22,11 @@ class _HeightWidgetState extends State<HeightWidget> {
       padding: const EdgeInsets.all(8.0),
       child: Card(
         elevation: 12,
-        shape: RoundedRectangleBorder(),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15)
+        ),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             SizedBox(height: 10,),
             Text(

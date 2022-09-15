@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, prefer_const_literals_to_create_immutables, must_be_immutable, unused_field, prefer_final_fields
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, prefer_const_literals_to_create_immutables, must_be_immutable, unused_field, prefer_final_fields, sized_box_for_whitespace
 
 import 'dart:math';
 
@@ -32,44 +32,57 @@ class _HomePageState extends State<HomePage> {
       ),
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.all(12),
+          height: MediaQuery.of(context).size.height - 90,
+          padding: EdgeInsets.all(8),
           child: Card(
             elevation: 12,
-            shape: RoundedRectangleBorder(),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15)
+            ),
             child: Column(
+              // mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                GenderWidget(
-                  onChange: (genderValue) {
-                    _gender = genderValue;
-                  },
+                Expanded(
+                  flex: 2,
+                  child: GenderWidget(
+                    onChange: (genderValue) {
+                      _gender = genderValue;
+                    },
+                  ),
                 ),
-                HeightWidget(
-                  onChange: (sliderValue) {
-                    _height = sliderValue;
-                  },
+                Expanded(
+                  flex: 2,
+                  child: HeightWidget(
+                    onChange: (sliderValue) {
+                      _height = sliderValue;
+                    },
+                  ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    AgeWidget(
-                      onChange: (ageValue) {
-                        _age = ageValue;
-                      },
-                      title: 'Age',
-                      initialValue: 30,
-                      min: 0,
-                      max: 120,
-                    ),
-                    AgeWidget(
-                      onChange: (weightValue) {
-                        _weight = weightValue;
-                      },
-                      title: 'Weight',
-                      initialValue: 50,
-                      min: 0,
-                      max: 200,
-                    ),
-                  ],
+                Expanded(
+                  flex: 2,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      AgeWidget(
+                        onChange: (ageValue) {
+                          _age = ageValue;
+                        },
+                        title: 'Age',
+                        initialValue: 30,
+                        min: 0,
+                        max: 120,
+                      ),
+                      AgeWidget(
+                        onChange: (weightValue) {
+                          _weight = weightValue;
+                        },
+                        title: 'Weight',
+                        initialValue: 50,
+                        min: 0,
+                        max: 200,
+                      ),
+                    ],
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(

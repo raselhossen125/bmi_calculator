@@ -36,10 +36,13 @@ class _AgeWidgetState extends State<AgeWidget> {
       padding: const EdgeInsets.all(8.0),
       child: Card(
         elevation: 12,
-        shape: RoundedRectangleBorder(),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15)
+        ),
         child: Padding(
-          padding: const EdgeInsets.only(left: 8, right: 8, top: 8, bottom: 3),
+          padding: const EdgeInsets.only(left: 8, right: 8, top: 12, bottom: 7),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Text(
                 widget.title,

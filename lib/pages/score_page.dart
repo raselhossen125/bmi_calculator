@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:pretty_gauge/pretty_gauge.dart';
-import 'package:share_plus/share_plus.dart';
 
 class ScorePage extends StatelessWidget {
   final double bmiScore;
@@ -25,10 +24,12 @@ class ScorePage extends StatelessWidget {
         title: Text("BMI Score"),
       ),
       body: Container(
-        padding: EdgeInsets.all(12),
+        padding: EdgeInsets.all(8),
         child: Card(
           elevation: 12,
-          shape: RoundedRectangleBorder(),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15)
+          ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
