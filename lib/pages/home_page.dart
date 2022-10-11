@@ -25,6 +25,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -42,24 +44,24 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               // mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Expanded(
-                  flex: 2,
+                SizedBox(
+                  height: size.height * 0.25,
                   child: GenderWidget(
                     onChange: (genderValue) {
                       _gender = genderValue;
                     },
                   ),
                 ),
-                Expanded(
-                  flex: 2,
+                SizedBox(
+                  height: size.height * 0.27,
                   child: HeightWidget(
                     onChange: (sliderValue) {
                       _height = sliderValue;
                     },
                   ),
                 ),
-                Expanded(
-                  flex: 2,
+                SizedBox(
+                  height: size.height * 0.18,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -84,6 +86,7 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
+                Spacer(),
                 Padding(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 60,
